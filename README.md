@@ -4,9 +4,9 @@
     <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=0&pattern=Signal&theme=Light&logo=" />
 </p>
 
-<p align="center">
+<!--<p align="center">
     <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=0&pattern=Signal&theme=Light&logo=https://miro.medium.com/max/2400/0*a6oSE8C5z6SjVtjj.png" />
-</p>
+</p>-->
 
 
 

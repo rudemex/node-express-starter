@@ -5,6 +5,10 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-debugger": "error",

@@ -4,17 +4,17 @@ module.exports = {
   roots: ['src', 'test'],
   forceExit: true,
   testMatch: [
-    '**/test/**/*.spec.ts',
-    '**/test/**/*.it.ts',
-    '**/test/**/*.test.ts',
-    '**/test/**/*.e2e.ts',
+    '**/test/**/*.spec.js',
+    '**/test/**/*.it.js',
+    '**/test/**/*.test.js',
+    '**/test/**/*.e2e.js',
   ],
   verbose: true,
   testEnvironment: 'node',
   setupFilesAfterEnv: ['jest-extended'],
   moduleFileExtensions: ['js', 'mjs', 'json'],
   moduleDirectories: ['node_modules'],
-  preset: 'jest',
+  //preset: 'jest',
   // transform: {
   //   "^.+\\.tsx?$": "ts-jest"
   // }
