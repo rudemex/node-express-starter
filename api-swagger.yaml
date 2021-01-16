@@ -1,0 +1,29 @@
+swagger: '2.0'
+info:
+  description: Starter server express nodejs
+  version: 1.0.0
+  title: node-express-starter
+basePath: /api
+paths:
+  '/health':
+    get:
+      tags:
+        - Health
+      summary: Check server status
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Consulta satisfactoria
+          schema:
+            $ref: '#/definitions/get-health-200'
+        '404':
+          description: Error.
+definitions:
+  get-health-200:
+    type: object
+    properties:
+      status:
+        type: string

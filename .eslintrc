@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "plugins": ["prettier"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-debugger": "error",
+    "no-var": "error",
+    "prettier/prettier":  ["error",{
+      "endOfLine": "auto"}
+    ]
+  }
+}

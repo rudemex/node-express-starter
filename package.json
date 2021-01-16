@@ -1,0 +1,92 @@
+{
+  "name": "node-express-starter",
+  "version": "1.0.0",
+  "description": "Starter server express nodejs",
+  "scripts": {
+    "dev": "nodemon --config ./nodemon.dev.json",
+    "mock": "nodemon --config ./nodemon.mock.json",
+    "start": "nodemon",
+    "build": "node -v",
+    "test": "cross-env NODE_ENV=test jest --runInBand",
+    "lint": "yarn lint:base ./src ./mock ./test",
+    "lint:base": "eslint --ext .js,.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudemex/node-express-starter.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "express",
+    "js",
+    "javascript",
+    "ecmascript"
+  ],
+  "author": {
+    "name": "Maximiliano \"Mex\" Delgado",
+    "email": "mdelgado@tresdoce.com.ar",
+    "url": "https://rudemex.github.io/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rudemex/node-express-starter/issues"
+  },
+  "homepage": "https://github.com/rudemex/node-express-starter#readme",
+  "signale-logger": {
+    "displayFilename": true,
+    "displayTimestamp": true,
+    "displayDate": true,
+    "displayLine": true,
+    "timeZone": "America/Argentina/Buenos_Aires",
+    "formatDate": "YYYY-MM-DD",
+    "formatTime": "HH:mm:ss a"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "printWidth": 80,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,json}": [
+      "yarn lint:base --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "signale-logger": "^1.5.0",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.1.6",
+    "xss": "^1.0.8"
+  },
+  "devDependencies": {
+    "codecov": "^3.8.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "jest": "^26.6.3",
+    "jest-extended": "^0.11.5",
+    "lint-staged": "^10.3.0",
+    "mock-json-server": "^1.3.6",
+    "prettier": "^2.1.1",
+    "supertest": "^6.0.1"
+  }
+}
