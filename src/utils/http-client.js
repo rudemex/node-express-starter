@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios').default;
 const https = require('https');
 const { toStringify } = require('./converters');
 const signale = require('./signale');

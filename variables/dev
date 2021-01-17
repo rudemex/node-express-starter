@@ -17,3 +17,4 @@ SWAGGER_ENABLED="true"
 # PARAMS ENVIRONMENTS
 
 # SERVICES ENVIRONMENTS
+API_RICK_URL=https://rickandmortyapi.com/api
