@@ -4,19 +4,24 @@ const { toStringify } = require('../utils/converters');
 
 module.exports = (app, appConfig) => {
   const { context } = appConfig['server'];
+  const { apiRick } = appConfig['services'];
 
   app.get(encodeURI(`${context}/character`), async (req, res) => {
     try {
-      const params = { name: 'rick', status: 'alive', page: 2 };
+      const params = { ...req.query };
 
-      const { status, data } = await httpClient.get('https://rickandmortyapi.com/api/character/', {
-        params,
+      const urlService = encodeURI(`${apiRick}/character/`);
+      const { status, data } = await httpClient.get(urlService, { params });
+
+      signale.success({
+        prefix: '[character] RESPONSE BODY',
+        message: toStringify(data),
       });
 
       res.status(status).send(data);
     } catch (error) {
       signale.error({
-        prefix: '[spa-config] ERROR',
+        prefix: '[character] ERROR',
         message: toStringify(error),
       });
       res
