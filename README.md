@@ -1,13 +1,12 @@
 <!--<h1 align="center">Simple Node TypeScript Express Starter<h1/>-->
 
 <p align="center">
-    <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=0&pattern=Signal&theme=Light&logo=" />
+    <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=1&pattern=Signal&theme=Light" />
 </p>
 
 <!--<p align="center">
-    <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=0&pattern=Signal&theme=Light&logo=https://miro.medium.com/max/2400/0*a6oSE8C5z6SjVtjj.png" />
+    <img alt="node-express-starter" width="100%" height="auto" src="https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=1&pattern=Signal&theme=Light" />
 </p>-->
-
 
 
 <p align="center">
