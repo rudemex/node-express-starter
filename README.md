@@ -1,7 +1,5 @@
 # Starter - Node Express
 
-![node-express-starter](https://socialify.git.ci/rudemex/node-express-starter/image?font=Inter&language=1&pattern=Signal&theme=Light)
-
  ![Node.js website](https://img.shields.io/static/v1.svg?label=Node&message=v10.15.3&labelColor=339933&color=757575&logoColor=FFFFFF&logo=node.js) ![Npm website](https://img.shields.io/static/v1.svg?label=Npm&message=v6.4.1&labelColor=CB3837&logoColor=FFFFFF&color=757575&logo=npm) ![ExpressJS website](https://img.shields.io/static/v1.svg?label=Express&message=v4.17.1&labelColor=444&logoColor=FFFFFF&color=757575&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEX////q6uqgoaEZGhtzc3SSk5Ourq5hYmLHx8f09PVOTk+7u7vf39+DhITT09M3ODgiPZ4kAAAAuUlEQVR42u2RyxbDIAhE0fEVjfL/fxu0YNJFF123d0E4iEMY6c83OA/BO0kDohYTstupUoiOikaTEzjv8+5EpgODaKAeJGQk02ekLbpikBglKh7d0o6x7jZqU0epe5aU05LkUTH2BqhknAivPsA/ik8yTYJ8PzSw/jYGGc66bzLeJJhvNZ90z4hIRkeyNKCZU2aoUMBuG7W8LqRtSgT8oVbra+kgI9gKxey2xzBKn8dTprDOW4YW+hUuT8sFbvZNU3wAAAAASUVORK5CYII=) ![GitHub](https://img.shields.io/github/license/rudemex/node-express-starter) ![GitHub Workflow Status](https://github.com/rudemex/node-express-starter/workflows/CI/CD/badge.svg?branch=master) ![Codecov](https://img.shields.io/codecov/c/github/rudemex/node-express-starter)  
 
 
