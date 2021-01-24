@@ -5,16 +5,6 @@
  ![Node.js website](https://img.shields.io/static/v1.svg?label=Node&message=v10.15.3&labelColor=339933&color=757575&logoColor=FFFFFF&logo=node.js) ![Npm website](https://img.shields.io/static/v1.svg?label=Npm&message=v6.4.1&labelColor=CB3837&logoColor=FFFFFF&color=757575&logo=npm) ![ExpressJS website](https://img.shields.io/static/v1.svg?label=Express&message=v4.17.1&labelColor=444&logoColor=FFFFFF&color=757575&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEX////q6uqgoaEZGhtzc3SSk5Ourq5hYmLHx8f09PVOTk+7u7vf39+DhITT09M3ODgiPZ4kAAAAuUlEQVR42u2RyxbDIAhE0fEVjfL/fxu0YNJFF123d0E4iEMY6c83OA/BO0kDohYTstupUoiOikaTEzjv8+5EpgODaKAeJGQk02ekLbpikBglKh7d0o6x7jZqU0epe5aU05LkUTH2BqhknAivPsA/ik8yTYJ8PzSw/jYGGc66bzLeJJhvNZ90z4hIRkeyNKCZU2aoUMBuG7W8LqRtSgT8oVbra+kgI9gKxey2xzBKn8dTprDOW4YW+hUuT8sFbvZNU3wAAAAASUVORK5CYII=) ![GitHub](https://img.shields.io/github/license/rudemex/node-express-starter) ![GitHub Workflow Status](https://github.com/rudemex/node-express-starter/workflows/CI/CD/badge.svg?branch=master) ![Codecov](https://img.shields.io/codecov/c/github/rudemex/node-express-starter)  
 
 
-## Glosario
-
-* [📝 Requerimientos básicos](./#basic-requirements)
-* [🛠 Instalar dependencias](./#install-dependencies)
-* [⚙ Configuración](./#configurations)
-* [💻 Scripts](./#scripts)
-* [📚 Swagger](./#swagger-info)
-* [📤 Commits](./#commits)
-* [😝 Mocks](./#mocks)
-
 ### 📝 Requerimientos básicos
 
 * Node.js v10.15.3 or higher \([Download](https://nodejs.org/es/download/)\)
@@ -62,7 +52,102 @@ Básicamente el archivo funciona como un objeto que se exporta y puede ser consu
 }
 ```
 
-🤓 Ver todas las propiedades de configuración disponibles en detalle. \#\#\#\# Server \`port\`: Es el puerto por el cual va a correr el servidor. - Type: \`Number\` - Default: \`8080\` \`context\`: Es el contexto el que se puede acceder a la API del servidor, de esta manera no se exponen los endpoints en la ruta principal de la aplicación. - Type: \`String\` - Default: \`/api\` \`origins\`: Es una whitelist para que la aplicación sólo pueda ser consumida por urls confiables y evitar cualquier tipo de solicitudes no deseadas y maliciosas. Debes escribir las urls separadas por una coma. - Type: \`String\` - Default: \`http://localhost:3000,http://localhost:3001,http://localhost:8080\` \`originsReadOnly\`: Es la configuración de las urls para \*\*CORS\*\*, lo que permite validar quién puede consumir el servidor. - Type: \`String\` - Default: \`http://localhost:3001\` \`headersAllowed\`: Parámetros que va a recibir por el header en los request. - Type: \`String\` - Default: \`Content-Type,Authorization,Set-Cookie,Access-Control-Allow-Origin,Cache-Control,Pragma\` \`methodsAllowed\`: Métodos http disponibles para el cors - Type: \`String\` - Default: \`GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS\` \`corsCredentials\`: Habilita o deshabilita el uso de las credenciales en las peticiones CORS en el servidor. - Type: \`Boolean\` - Default: \`false\` \`corsEnabled\`: Habilita o deshabilita el uso de CORS en el servidor. - Type: \`Boolean\` - Default: \`false\` \`tz\`: Es la configuración de la zona horaria para el servidor. \[Lista de zonas horarias\]\(https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones\#List\) - Type: \`String\` - Default: \`America/Argentina/Buenos\_Aires\` \`showLogInterceptor\`: Habilita o deshabilita la visualización de los interceptors de los requests y responses por medio de logs. - Type: \`Boolean\` - Default: \`false\` \`enabledLogs\`: Habilita o deshabilita los logs de la aplicación. - Type: \`Boolean\` - Default: \`true\` \#\#\#\# Swagger \`enabled\`: Habilitar o deshabilitar la documentación \*\*Swagger\*\* de los endpoints del servidor. - Type: \`Boolean\` - Default: \`true\` \#\#\#\# Params Configuración de parámetros a utilizar en la aplicación, manteniendo el esquema \`key:value\`. \`\`\`json5 { ... "params": { "my-param": "" }, ... } \`\`\` \#\#\#\# Services Es donde se va a colocar las urls de los micro-servicios a consumir, manteniendo el esquema \`key:value\`. \`\`\`json5 { ... "services": { "my-microservice": "" }, ... } \`\`\`
+🤓 Ver todas las propiedades de configuración disponibles en detalle.
+
+**Server**
+
+`port`: Es el puerto por el cual va a correr el servidor.
+
+* Type: `Number`
+* Default: `8080`
+
+`context`: Es el contexto el que se puede acceder a la API del servidor, de esta manera no se exponen los endpoints en la ruta principal de la aplicación.
+
+* Type: `String`
+* Default: `/api`
+
+`origins`: Es una whitelist para que la aplicación sólo pueda ser consumida por urls confiables y evitar cualquier tipo de solicitudes no deseadas y maliciosas. Debes escribir las urls separadas por una coma.
+
+* Type: `String`
+* Default: `http://localhost:3000,http://localhost:3001,http://localhost:8080`
+
+`originsReadOnly`: Es la configuración de las urls para **CORS**, lo que permite validar quién puede consumir el servidor.
+
+* Type: `String`
+* Default: `http://localhost:3001`
+
+`headersAllowed`: Parámetros que va a recibir por el header en los request.
+
+* Type: `String`
+
+  -
+
+  Default: `Content-Type,Authorization,Set-Cookie,Access-Control-Allow-Origin,Cache-Control,Pragma`
+
+`methodsAllowed`: Métodos http disponibles para el cors
+
+* Type: `String`
+* Default: `GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS`
+
+`corsCredentials`: Habilita o deshabilita el uso de las credenciales en las peticiones CORS en el servidor.
+
+* Type: `Boolean`
+* Default: `false`
+
+`corsEnabled`: Habilita o deshabilita el uso de CORS en el servidor.
+
+* Type: `Boolean`
+* Default: `false`
+
+`tz`: Es la configuración de la zona horaria para el servidor. [Lista de zonas horarias](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)
+
+* Type: `String`
+* Default: `America/Argentina/Buenos_Aires`
+
+`showLogInterceptor`: Habilita o deshabilita la visualización de los interceptors de los requests y responses por medio de logs.
+
+* Type: `Boolean`
+* Default: `false`
+
+`enabledLogs`: Habilita o deshabilita los logs de la aplicación.
+
+* Type: `Boolean`
+* Default: `true`
+
+**Swagger**
+
+`enabled`: Habilitar o deshabilitar la documentación **Swagger** de los endpoints del servidor.
+
+* Type: `Boolean`
+* Default: `true`
+
+**Params**
+
+Configuración de parámetros a utilizar en la aplicación, manteniendo el esquema `key:value`.
+
+```text
+{
+  ...
+  "params": {
+    "my-param": "<param-value>"
+  },
+  ...
+}
+```
+
+**Services**
+
+Es donde se va a colocar las urls de los micro-servicios a consumir, manteniendo el esquema `key:value`.
+
+```text
+{
+  ...
+  "services": {
+    "my-microservice": "<url-my-microservice>"
+  },
+  ...
+}
+```
 
 ## 💻 Scripts
 
@@ -202,12 +287,6 @@ const routes = {
 
 module.exports = routes;
 ```
-
-## 👨‍💻 Author
-
-[![badge](https://img.shields.io/static/v1.svg?style=flat-square&label=Mex%20Delgado&message=Sr.%20Fullstack%20Developer&labelColor=1A1A1A&color=999999&logo=hackaday)](mailto:mdelgado@tresdoce.com.ar)
-
-📜 [License MIT]()
 
 Made with ❤
 
