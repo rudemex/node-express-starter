@@ -14,6 +14,7 @@ module.exports = {
     'node_modules/*',
     'mock',
     'mock/*',
+    'src/swagger.js',
     'src/app.js'
   ],
   verbose: true,
