@@ -26,7 +26,7 @@ describe('UTILS - CONVERTERS', () => {
     });
 
     it('Should be convert date to timestamp', async (done) => {
-        const currentDate = formatDateToTimestamp('2021-02-01T12:34:05.077Z');
+        const currentDate = formatDateToTimestamp('2021-02-01T12:34:05');
         expect(currentDate).toEqual(1612193645);
         done();
     });
