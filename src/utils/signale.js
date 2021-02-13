@@ -16,12 +16,6 @@ const options = {
       label: 'santa',
       logLevel: 'info',
     },
-    pepe: {
-      badge: '(?)',
-      color: 'blue',
-      label: 'pepe',
-      logLevel: 'info',
-    },
     success: {
       badge: '✔',
       color: 'green',

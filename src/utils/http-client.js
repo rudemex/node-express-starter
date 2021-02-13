@@ -1,8 +1,9 @@
 const axios = require('axios').default;
 const https = require('https');
-const { toStringify } = require('./converters');
 const signale = require('./signale');
 const config = require('config');
+const { toStringify } = require('./converters');
+
 const serverConfig = config['server'];
 
 const headers = {
@@ -14,44 +15,6 @@ const headers = {
 };
 
 const filterOptions = ({ ...rest }) => rest;
-
-const prepareResponse = async (method, url, headers = {}, params = {}, data = {}) => {
-  const options = {
-    url,
-    method,
-    headers,
-    params,
-    data,
-    httpsAgent: new https.Agent({
-      rejectUnauthorized: false,
-      requestCert: false,
-    }),
-  };
-
-  if (Object.keys(headers).length) {
-    options['headers'] = { ...headers };
-  }
-
-  if (Object.keys(params).length) {
-    options['params'] = { ...params };
-  }
-
-  if (Object.keys(data).length) {
-    options['data'] = { ...data };
-  }
-
-  signale.info(`REQUEST TO: ${encodeURI(url)}`);
-
-  try {
-    return await axios(options);
-  } catch (error) {
-    signale.error({
-      prefix: '[prepareResponse] ERROR',
-      message: toStringify(error),
-    });
-    throw error;
-  }
-};
 
 const fetch = async (url, options = {}) => {
   try {
@@ -72,7 +35,7 @@ const fetch = async (url, options = {}) => {
         if (serverConfig['showLogInterceptor'] == 'true') {
           signale.error({
             prefix: '[http-client][interceptor] REQUEST',
-            message: toStringify(error),
+            message: error,
           });
         }
         return Promise.reject(error);
@@ -103,11 +66,15 @@ const fetch = async (url, options = {}) => {
       params: options['params'],
       method: options['method'],
       headers: options['headers'],
+      httpsAgent: new https.Agent({
+        rejectUnauthorized: false,
+        requestCert: false,
+      }),
     });
   } catch (error) {
     signale.error({
       prefix: '[http-client] ERROR',
-      message: toStringify(error),
+      message: error,
     });
     throw error;
   }
@@ -146,7 +113,6 @@ const del = async (url, options = {}) => {
 };
 
 module.exports = {
-  prepareResponse,
   get,
   post,
   put,
