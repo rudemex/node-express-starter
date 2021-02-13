@@ -3,14 +3,14 @@ const swaggerUi = require('swagger-ui-express');
 const signale = require('./utils/signale');
 const pjson = require('../package.json');
 
-const swagger = (app, config) => {
+const swagger = (app, appConfig) => {
   const swaggerDefinition = {
     info: {
       title: `${pjson['name']}`,
       version: `${pjson['version']}`,
       description: `Swagger - ${pjson['description']}`,
     },
-    basePath: config['context'],
+    basePath: appConfig['context'],
   };
 
   const options = {
@@ -25,7 +25,7 @@ const swagger = (app, config) => {
     res.send(swaggerSpec);
   });
 
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use(`/${appConfig['swagger']['path']}`, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   signale.info('Swagger is enabled in : /api-docs');
 };
 

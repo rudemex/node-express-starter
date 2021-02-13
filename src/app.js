@@ -3,28 +3,24 @@ const config = require('config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const { toStringify } = require('./utils/converters');
 const signale = require('./utils/signale');
 const swagger = require('./swagger');
 const routes = require('./routes/routes');
 const pjson = require('../package.json');
+const { toStringify } = require('./utils/converters');
 
 //signale.info('Using config: ', config);
 const appConfig = config;
 const serverConfig = appConfig['server'];
 const swaggerConfig = appConfig['swagger'];
 
-if (serverConfig['enabledLogs'] == 'false') {
-  signale.disable();
-} else {
-  signale.enable();
-}
+serverConfig['enabledLogs'] == 'false' ? signale.disable() : signale.enable();
 
-const corsOptions = {
-  origin: serverConfig['corsEnabled'] == 'true' ? serverConfig['origins'].split(',') : '*',
-  methods: serverConfig['methodsAllowed'],
+let corsOptions = {
+  origin: '*',
+  methods: `${serverConfig['methodsAllowed']}`,
   credentials: serverConfig['corsCredentials'],
-  allowedHeaders: serverConfig['headersAllowed'],
+  allowedHeaders: `${serverConfig['headersAllowed']}`,
 };
 
 const app = express();
@@ -35,11 +31,10 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
   const output_reqHeaders = {
-    output: req['headers'],
+    output: req.headers,
   };
-
   const output_reqBody = {
-    output: req['body'],
+    output: req.body,
   };
 
   if (serverConfig['showLogInterceptor'] == 'true') {
@@ -61,11 +56,12 @@ app.use((req, res, next) => {
   const origin = req['headers']['origin'] || '*';
 
   if (serverConfig['corsEnabled'] == 'true' && allowedOrigins.includes(origin)) {
+    corsOptions['origin'] = origin;
+    corsOptions['credentials'] = true;
     res.header('Access-Control-Allow-Origin', origin);
-    res.header('Access-Control-Allow-Methods', serverConfig['methodsAllowed']);
-    res.header('Access-Control-Allow-Headers', serverConfig['headersAllowed']);
-    res.header('Access-Control-Allow-Credentials', 'true');
-    corsOptions.origin = origin;
+    res.header('Access-Control-Allow-Methods', `${serverConfig['methodsAllowed']}`);
+    res.header('Access-Control-Allow-Headers', `${serverConfig['headersAllowed']}`);
+    res.header('Access-Control-Allow-Credentials', `${corsOptions['credentials']}`);
   }
 
   next();

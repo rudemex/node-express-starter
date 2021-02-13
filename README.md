@@ -124,8 +124,7 @@ servidor.
 `headersAllowed`: Parámetros que va a recibir por el header en los request.
 
 - Type: `String`
--
-Default: `Content-Type,Authorization,Set-Cookie,Access-Control-Allow-Origin,Cache-Control,Pragma`
+- Default: `Content-Type,Authorization,Set-Cookie,Access-Control-Allow-Origin,Cache-Control,Pragma`
 
 `methodsAllowed`: Métodos http disponibles para el cors
 
