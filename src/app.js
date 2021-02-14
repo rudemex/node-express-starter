@@ -71,7 +71,7 @@ signale.info('Using cors config: ', toStringify(corsOptions));
 app.use(cors(corsOptions));
 
 if (swaggerConfig['enabled'] == 'true') {
-  swagger(app, serverConfig);
+  swagger(app, appConfig);
 }
 
 routes(app, appConfig, pjson['version']);

@@ -10,7 +10,7 @@ const swagger = (app, appConfig) => {
       version: `${pjson['version']}`,
       description: `Swagger - ${pjson['description']}`,
     },
-    basePath: appConfig['context'],
+    basePath: appConfig['server']['context'],
   };
 
   const options = {
