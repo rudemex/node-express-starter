@@ -22,8 +22,8 @@
 ## Glosario
 
 - [📝 Requerimientos básicos](#basic-requirements)
-- [🛠 Instalar dependencias](#install-dependencies)
-- [⚙ Configuración](#configurations)
+- [🛠️ Instalar dependencias](#install-dependencies)
+- [⚙️ Configuración](#configurations)
 - [💻 Scripts](#scripts)
 - [📚 Swagger](#swagger-info)
 - [📤 Commits](#commits)
@@ -272,7 +272,7 @@ Acceso a la documentación y testeo de los endpoints: `http://localhost:8080/api
 #### Scheme
 
 ```
-<http|https>://<server_url><:port>/api-docs
+<http|https>://<server_url><:port>/<path>
 ```
 <a name="commits"></a>
 ## 📤 Commits
