@@ -22,5 +22,6 @@ module.exports = {
   setupFilesAfterEnv: ['jest-extended','./test/jest.setup.js'],
   moduleFileExtensions: ['js', 'mjs', 'json'],
   moduleDirectories: ['node_modules'],
+  testResultsProcessor: 'jest-sonar-reporter',
   //preset: 'jest'
 };
