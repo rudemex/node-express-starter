@@ -9,7 +9,7 @@
     "corsCredentials": "false",
     "corsEnabled": "true",
     "tz": "America/Argentina/Buenos_Aires",
-    "showLogInterceptor": "false",
+    "showLogInterceptor": "true",
     "enabledLogs": "true"
   },
   "swagger": {

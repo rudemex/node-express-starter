@@ -9,7 +9,7 @@ const serverConfig = config['server'];
 const headers = {
   'Content-Type': 'application/json',
   Accept: `application/vnd.iman.v1+json, application/json, text/plain, */*`,
-  'Access-Control-Allow-Origin': '*',
+  //'Access-Control-Allow-Origin': '*',
   'Cache-Control': 'no-store, no-cache, must-revalidate',
   Pragma: 'no-cache',
 };
@@ -81,7 +81,7 @@ const fetch = async (url, options = {}) => {
 };
 
 const get = async (url, options = {}) => {
-  return await fetch(url, {
+  return fetch(url, {
     method: 'GET',
     headers,
     ...filterOptions(options),
@@ -89,7 +89,7 @@ const get = async (url, options = {}) => {
 };
 
 const post = async (url, options = {}) => {
-  return await fetch(url, {
+  return fetch(url, {
     method: 'POST',
     headers,
     ...filterOptions(options),
@@ -97,7 +97,7 @@ const post = async (url, options = {}) => {
 };
 
 const put = async (url, options = {}) => {
-  return await fetch(url, {
+  return fetch(url, {
     method: 'PUT',
     headers,
     ...filterOptions(options),
@@ -105,7 +105,7 @@ const put = async (url, options = {}) => {
 };
 
 const del = async (url, options = {}) => {
-  return await fetch(url, {
+  return fetch(url, {
     method: 'DELETE',
     headers,
     ...filterOptions(options),

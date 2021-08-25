@@ -9,7 +9,6 @@ const routes = require('./routes/routes');
 const pjson = require('../package.json');
 const { toStringify } = require('./utils/converters');
 
-//signale.info('Using config: ', config);
 const appConfig = config;
 const serverConfig = appConfig['server'];
 const swaggerConfig = appConfig['swagger'];
@@ -17,7 +16,6 @@ const swaggerConfig = appConfig['swagger'];
 serverConfig['enabledLogs'] == 'false' ? signale.disable() : signale.enable();
 
 let corsOptions = {
-  origin: '*',
   methods: `${serverConfig['methodsAllowed']}`,
   credentials: serverConfig['corsCredentials'],
   allowedHeaders: `${serverConfig['headersAllowed']}`,
@@ -54,6 +52,7 @@ app.use((req, res, next) => {
 
   const allowedOrigins = serverConfig['origins'].split(',');
   const origin = req['headers']['origin'] || '*';
+  corsOptions['origin'] = origin;
 
   if (serverConfig['corsEnabled'] == 'true' && allowedOrigins.includes(origin)) {
     corsOptions['origin'] = origin;
